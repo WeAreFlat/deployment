@@ -209,7 +209,7 @@ function initMap() {
 		flatmatesLink.href = tradeMeFlatmates + propertyID;
 		suburbName.innerHTML = suburb.getProperty('suburb_name');
 
-		mbiePrice.innerHTML = "$" + propertyPrice;
+		mbiePrice.innerHTML = "$" + propertyPrice + "/week";
 
 		console.log(suburb.getProperty('suburb_name'));
 	});
