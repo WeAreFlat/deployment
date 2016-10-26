@@ -60,7 +60,10 @@ body {
     background-color: #F4511E;
     color: #fff;
 }
-
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 .wrapper {
     width: 90%;
     margin: 0 5%;
