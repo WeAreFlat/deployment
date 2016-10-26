@@ -148,7 +148,7 @@ function initMap() {
 				'lat': (parsed_maps_obj.north + parsed_maps_obj.south) / 2,
 				'lng': (parsed_maps_obj.west + parsed_maps_obj.east) / 2
 			};
-			infoBubble.content = '<div class="tooltip"><p>' + event.feature.getProperty("suburb_name") + '</p><br><p id="colouredPrice">$' + event.feature.getProperty("price") + '</p></div>';
+			infoBubble.content = '<div class="tooltip"><p>' + event.feature.getProperty("suburb_name") + '</p><br><p id="colouredPrice">$' + event.feature.getProperty("price") + '/week</p></div>';
 			infoBubble.position = new google.maps.LatLng(tooltip_center);
 			infoBubble.open();
 		});
