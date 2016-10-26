@@ -76,32 +76,16 @@ function initMap() {
 		minZoom: 11,
 		disableDefaultUI: true,
 		center: {lat: -36.8629404, lng: 174.7250425},
-		styles: [{
+		styles: [{"stylers": [{"visibility": "off"}]}, {
+			"featureType": "water",
+			"stylers": [{"visibility": "on"}, {"color": "#725AC1"}]
+		}, {
 			"featureType": "landscape",
-			"stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]
+			"stylers": [{"visibility": "on"}, {"color": "#242038"}]
 		}, {
-			"featureType": "poi",
-			"stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]
-		}, {
-			"featureType": "road.highway",
-			"stylers": [{"saturation": -100}, {"visibility": "simplified"}]
-		}, {
-			"featureType": "road.arterial",
-			"stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]
-		}, {
-			"featureType": "road.local",
-			"stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]
-		}, {
-			"featureType": "transit",
-			"stylers": [{"saturation": -100}, {"visibility": "simplified"}]
-		}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {
-			"featureType": "water",
-			"elementType": "labels",
-			"stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]
-		}, {
-			"featureType": "water",
-			"elementType": "geometry",
-			"stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]
+			"featureType": "administrative",
+			"elementType": "geometry.stroke",
+			"stylers": [{"visibility": "off"}, {"color": "#2f343b"}, {"weight": 1}]
 		}]
 	});
 
@@ -116,8 +100,8 @@ function initMap() {
 			fillColor: color,
 			fillOpacity: 1.0,
 			strokeOpacity: 1,
-			strokeColor: '#FF8A65',
-			strokeWeight: 1
+			strokeColor: '#000',
+			strokeWeight: 0.7
 		}
 	});
 
@@ -198,11 +182,15 @@ function initMap() {
 		$.getJSON('https://api.trademe.co.nz/v1/Search/Property/Rental.json?oauth_consumer_key=D17F85682EC9E85C5331A5EC8A37EF6C&oauth_signature_method=PLAINTEXT&oauth_signature=E2C3B1648930003B5A57AEA51486DDF0%26&suburb=' + propertyID, function (data) {
 			tradeMeTotalRentals = data;
 			rentCount.innerHTML = tradeMeTotalRentals.TotalCount;
+		}).fail(function () {
+			rentCount.innerHTML = "NA";
 		});
 
 		$.getJSON('https://api.trademe.co.nz/v1/Search/Flatmates.json?oauth_consumer_key=D17F85682EC9E85C5331A5EC8A37EF6C&oauth_signature_method=PLAINTEXT&oauth_signature=E2C3B1648930003B5A57AEA51486DDF0%26&suburb=' + propertyID, function (data) {
 			tradeMeTotalFlatmates = data;
 			flatmatesCount.innerHTML = tradeMeTotalFlatmates.TotalCount;
+		}).fail(function () {
+			flatmatesCount.innerHTML = "NA";
 		});
 
 		rentLink.href = tradeMeRent + propertyID;
