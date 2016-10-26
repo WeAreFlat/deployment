@@ -93,7 +93,7 @@ body {
     width: 35px;
     height: auto;
     color: #4A148C;
-    z-index: 10001;
+    z-index: 999;
 }
 .homePosition {
     position: relative;
@@ -210,6 +210,9 @@ body {
     /* ====================
     DESKTOP
    ==================== */
+    #about {
+    z-index: 10001;
+}
     .modal {
         z-index: 1000;
         position: fixed;
