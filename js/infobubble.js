@@ -279,7 +279,7 @@ InfoBubble.prototype.buildDom_ = function() {
    * The animation for the infobubble
    * @type {string}
    */
-  this.animationName_ = '_ibani_' + Math.round(Math.random() * 10000);
+  this.animationName_ = '_ibani_';
 
   var css = '.' + this.animationName_ + '{-webkit-animation-name:' +
       this.animationName_ + ';-webkit-animation-duration:0.3s;' +
