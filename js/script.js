@@ -140,6 +140,13 @@ function initMap() {
 			infoBubble.content = '<div class="tooltip"><p>' + event.feature.getProperty("suburb_name") + '</p><br><p id="colouredPrice">$' + event.feature.getProperty("price") + '/week</p></div>';
 			infoBubble.position = new google.maps.LatLng(tooltip_center);
 			infoBubble.open();
+
+			//send mouseover event to GA
+
+            ga('send', 'event', {
+                'eventCategory': suburbName,
+                'eventAction': 'suburbHover'
+            });
 			console.log('open');
 		});
 
@@ -170,10 +177,18 @@ function initMap() {
 	var tradeMeRent = 'http://www.trademe.co.nz/Browse/CategoryAttributeSearchResults.aspx?search=1&cid=5748&sidebar=1&132=FLAT&selected135=5&selected136=77&134=1&135=5&136=';
 	var tradeMeFlatmates = 'http://www.trademe.co.nz/Browse/CategoryAttributeSearchResults.aspx?search=1&cid=2975&sidebar=1&76=2975&134=1&135=7&136=';
 	map.data.addListener('click', function (event) {
+
+
 		$(".stats").fadeIn(120)
 		var rentLink = document.getElementById("rentLink");
 		var flatmatesLink = document.getElementById("flatmatesLink");
 		var suburbName = document.getElementById('suburbName');
+
+		//send the suburb that was clicked to GA
+        ga('send', 'event', {
+            'eventCategory': suburbName,
+            'eventAction': 'suburbClicked'
+        });
 
 		var rentCount = document.getElementById("rentCount");
 		var flatmatesCount = document.getElementById("flatmatesCount");
