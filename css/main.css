@@ -86,8 +86,13 @@ a:hover, a:visited, a:link, a:active
     top: 12px;
     width: 35px;
     height: auto;
-    color: #4A148C;
+    opacity: 0.8;
     z-index: 999;
+}
+
+#about:hover, #about:active
+{
+    opacity: 1;
 }
 .homePosition {
     position: relative;

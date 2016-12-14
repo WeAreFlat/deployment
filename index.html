@@ -157,7 +157,6 @@
 
 <div id="map"></div>
 <script src="js/script.js" defer></script>
-
 <script src="js/main.js"></script>
 </body>
 <script>
@@ -168,6 +167,10 @@
 
     ga('create', 'UA-64639076-5', 'auto');
     ga('send', 'pageview');
+    ga('require', 'eventTracker');
+    ga('require', 'outboundLinkTracker');
+    ga('require', 'urlChangeTracker');
 
 </script>
+<script async src='js/autotrack.js'></script>
 </html>
