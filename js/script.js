@@ -144,7 +144,7 @@ function initMap() {
 			//send mouseover event to GA
 
             ga('send', 'event', {
-                'eventCategory': suburbName,
+                'eventCategory': event.feature.getProperty("suburb_name"),
                 'eventAction': 'suburbHover'
             });
 			console.log('open');
@@ -186,7 +186,7 @@ function initMap() {
 
 		//send the suburb that was clicked to GA
         ga('send', 'event', {
-            'eventCategory': suburbName,
+            'eventCategory': event.feature.getProperty("suburb_name"),
             'eventAction': 'suburbClicked'
         });
 
