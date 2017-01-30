@@ -10,3 +10,12 @@ $(document).ready(function () {
         $(".overlay").fadeOut(120)
     });
 });
+
+$(document).ready(function () {
+    $("#about").click(function () {
+
+    		document.getElementById('infoModal').style.display = 'block';
+    		document.getElementById('infoModal').style.visibility = 'visible';
+
+    });
+});
