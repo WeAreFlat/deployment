@@ -75,17 +75,67 @@ function initMap() {
 		minZoom: 11,
 		disableDefaultUI: true,
 		center: {lat: -36.8629404, lng: 174.7250425},
-		styles: [{"stylers": [{"visibility": "off"}]}, {
-			"featureType": "water",
-			"stylers": [{"visibility": "on"}, {"color": "#725AC1"}]
-		}, {
-			"featureType": "landscape",
-			"stylers": [{"visibility": "on"}, {"color": "#242038"}]
-		}, {
-			"featureType": "administrative",
-			"elementType": "geometry.stroke",
-			"stylers": [{"visibility": "off"}, {"color": "#2f343b"}, {"weight": 1}]
-		}]
+		styles: [
+            {
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#2f343b"
+                    },
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "weight": 1
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "stylers": [
+                    {
+                        "color": "#242038"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#433286"
+                    },
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "weight": 2
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "stylers": [
+                    {
+                        "color": "#725AC1"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ]
 	});
 
 	// Pushing GeoJSON to maps
